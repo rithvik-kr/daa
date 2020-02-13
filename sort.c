@@ -121,14 +121,14 @@ int main()
 	//scanf("%d",&lower);
 	//scanf("%d",&upper);
 	int n=0;
-	for(i=0;i<=40;i++)
+	for(i=0;i<=20;i++)
 	{	
 		n=n+5000;
 		int arr[n];
 		int j;
 		for(j=0;j<n;j++)
 		{
-			arr[i]=(rand() % (100000000 - 10 + 1)) + 10; 
+			arr[j]=(rand() % (100000000 - 10 + 1)) + 10; 
 		}
 		clock_t t; 
 		t = clock(); 
