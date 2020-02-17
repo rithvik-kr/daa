@@ -126,36 +126,31 @@ void print(int a[], int n)
     printf("\n\n\n");
 }
 
-void main()
+int main()
 {
-    //printf("Enter the number of Inputs\n");
-    //int n;
-    //scanf("%d",&n);
-    //int arr[n];
-    int i;
-    //printf("Enter the Range\n");
-    //int lower, upper;
-    //scanf("%d",&lower);
-    //scanf("%d",&upper);
-    int n=0;
-    for(i=0;i<20;i++)
+    printf("Enter the number of Inputs\n");
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the Range\n");
+    int lower, upper;
+    scanf("%d",&lower);
+    scanf("%d",&upper);
+    int j;
+    srand(time(NULL));
+    for(j=0;j<n;j++)
     {
-        n=n+50000;
-        int arr[n];
-        int j;
-        for(j=0;j<n;j++)
-        {
-            arr[j]=(rand() % (1000000 - 10 + 1)) + 10;
-        }
-        clock_t t;
-        t = clock();
-        //bubbleSort(arr, n);
-        //selectionSort(arr, n);
-        //mergesort(arr, 0, n);
-        quicksort(arr,0,n-1);
-        t = clock() - t;
-        double time_taken = ((double)t)/CLOCKS_PER_SEC;
-        //print(arr, n);
-        printf("%d %f\n",n, time_taken);
+        arr[j]=(rand() % (upper - lower + 1)) + lower;
     }
+    clock_t t;
+    t = clock();
+    //bubbleSort(arr, n);
+    //selectionSort(arr, n);
+    //mergesort(arr, 0, n);
+    quicksort(arr,0,n-1);
+    t = clock() - t;
+    double time_taken = ((double)t)/CLOCKS_PER_SEC;
+    print(arr, n);
+    printf("%d %f\n",n, time_taken);
+    return 0;
 }
